@@ -4,20 +4,24 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'bundle_of_leaves/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bundle_of_leaves"
+  spec.name          = 'bundle_of_leaves'
   spec.version       = BundleOfLeaves::VERSION
-  spec.authors       = ["Ivan Karamazov"]
-  spec.email         = ["the.grandest.inquisitor@gmail.com"]
+  spec.authors       = ['Ivan Karamazov']
+  spec.email         = ['the.grandest.inquisitor@gmail.com']
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = ''
+  spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  spec.executables   = spec.files.grep(/^bin\//) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(/^(test|spec|features)\//)
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency 'bundler', '~> 1.3'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'cucumber'
+  spec.add_development_dependency 'capybara'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'bogus'
 end
